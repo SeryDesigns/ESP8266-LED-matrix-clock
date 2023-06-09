@@ -101,14 +101,16 @@ void setup()
   pinMode(INTERRUPT_PIN, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(INTERRUPT_PIN), handleInterrupt, FALLING);
 
-  // Display the current time on the LED matrix display
-  printTime();
+
 
 }
 
 void loop()
 {
-
+  // Display the current time on the LED matrix display
+  printTime();
+  
+  // Check if button is pressed
   if (interrupt_triggered)
   {
     interrupt_triggered = false;
